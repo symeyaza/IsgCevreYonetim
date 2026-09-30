@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="IsgCevreYonetim.Application/IsgCevreYonetim.Application.csproj" />
+  <Project Path="IsgCevreYonetim.Domain/IsgCevreYonetim.Domain.csproj" />
+  <Project Path="IsgCevreYonetim.Infrastructure/IsgCevreYonetim.Infrastructure.csproj" />
+  <Project Path="IsgCevreYonetim.Shared/IsgCevreYonetim.Shared.csproj" />
+  <Project Path="IsgCevreYonetim.Web/IsgCevreYonetim.Web.csproj" />
+</Solution>
