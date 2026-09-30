@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- ⭐ Excel için EPPlus -->
+
+		<!-- ⭐ PDF için iText7 (iTextSharp yerine) -->
+		<PackageReference Include="ClosureOSS.WebPush" Version="2.5.6" />
+		<PackageReference Include="ClosedXML" Version="0.105.1" />
+		<PackageReference Include="NPOI" Version="2.7.5" />
+		<!-- NPOI 2.7.5 görsel/çizim işlemlerinde bu sürümü çalışma anında ister.
+		     Doğrudan referanslar DLL ve Windows native dosyasının publish'e kesin girmesini sağlar. -->
+		<PackageReference Include="SkiaSharp" Version="3.119.0" />
+		<PackageReference Include="SkiaSharp.NativeAssets.Win32" Version="3.119.0" />
+		<PackageReference Include="QRCoder" Version="1.7.0" />
+		<PackageReference Include="itext7" Version="9.7.0" />
+		<PackageReference Include="itext7.bouncy-castle-adapter" Version="9.7.0" />
+
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.11">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="10.0.2" />
+		<PackageReference Include="NuGet.Packaging" Version="7.9.0" />
+		<PackageReference Include="NuGet.Protocol" Version="7.9.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Update="Templates\KazaArastirmaRaporu.xls">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		</Content>
+		<EmbeddedResource Include="Templates\KazaArastirmaRaporu.xls" LogicalName="IsgCevreYonetim.Web.Templates.KazaArastirmaRaporu.xls" />
+		<Content Update="Templates\TehlikeliIsCalismaIzni.xlsx">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
+		</Content>
+		<EmbeddedResource Include="Templates\TehlikeliIsCalismaIzni.xlsx" LogicalName="IsgCevreYonetim.Web.Templates.TehlikeliIsCalismaIzni.xlsx" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\IsgCevreYonetim.Application\IsgCevreYonetim.Application.csproj" />
+		<ProjectReference Include="..\IsgCevreYonetim.Infrastructure\IsgCevreYonetim.Infrastructure.csproj" />
+	</ItemGroup>
+
+</Project>
